@@ -9,7 +9,7 @@ import {MaterialCommunityIcons} from "@expo/vector-icons";
 export default function App() {
   return (
     <>
-      <View
+      {/* <View
         style={{
           flex: 1,
           justifyContent: "center",
@@ -18,7 +18,8 @@ export default function App() {
       >
       <MaterialCommunityIcons name="email" size={200} color="dodgerblue" />
       <AppText>I love SHIT</AppText>
-      </View>
+      </View> */}
+      <WelcomeScreen></WelcomeScreen>
     </>
   );
 }
