@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 
 import styles from "./styles"
 
@@ -7,6 +7,8 @@ import styles from "./styles"
 function AppText({ children, style }) {
   return <Text style={[styles.text, style]}>{children}</Text>;
 }
+
+
 
 
 

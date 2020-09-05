@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, SafeAreaView, Image } from "react-native";
 
+
 import colors from "../config/colors";
 
 function ViewImageScreen(props) {
