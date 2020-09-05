@@ -5,7 +5,7 @@ import styles from "./styles"
 
 
 function AppText({ children, style }) {
-  return <Text style={[styles.text, {style}]}>{children}</Text>;
+  return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
 
