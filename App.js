@@ -22,7 +22,8 @@ export default function App() {
       <AppText>I love SHIT</AppText>
       </View> */}
       {/* <WelcomeScreen></WelcomeScreen> */}
-      <ListingDetailsScreen />
+      {/* <ListingDetailsScreen /> */}
+      <ViewImageScreen />
     </>
   );
 }
