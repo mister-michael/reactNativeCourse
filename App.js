@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import MyAccountScreen from "./app/screens/MyAccountScreen";
 
 export default function App() {
   return (
@@ -25,7 +26,8 @@ export default function App() {
       {/* <WelcomeScreen></WelcomeScreen> */}
       {/* <ListingDetailsScreen /> */}
       {/* <ViewImageScreen /> */}
-      <MessagesScreen />
+      {/* <MessagesScreen /> */}
+      <MyAccountScreen />
     </>
   );
 }
