@@ -3,7 +3,7 @@ import { StyleSheet, Platform } from "react-native";
 const styles = StyleSheet.create({
   text: {
     color: "tomato",
-    fontSize: 100,
+    fontSize: 20,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },
 });
