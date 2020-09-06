@@ -3,7 +3,7 @@ import colors from "./colors"
 export default {
   colors,
   text: {
-      color: "tomato",
+      color: colors.dark,
       fontSize: 20,
       fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
     }
