@@ -8,6 +8,7 @@ import ListingsScreen from "./app/screens/ListingsScreen";
 import { TextInput, Text, Switch } from "react-native";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
 
 export default function App() {
   
@@ -18,16 +19,8 @@ export default function App() {
   ]
   
   const [category, setCategory] = useState(categories[1]);
-  
+
   return (
-    <>
-      <Screen>
-        <AppPicker 
-        selectedItem={category}
-        onSelectItem={item => setCategory(item)}
-        items={categories} icon="apps" placeholder="category" />
-        <AppTextInput icon="email" placeholder="email"/>
-      </Screen>
-    </>
+    <LoginScreen />
   );
 }
