@@ -30,7 +30,7 @@ function LoginScreen() {
               icon="email"
               keyboardType="email-address"
               onBlur={()=> setFieldTouched("email")}
-              onChangeText={handleChange("eamil")}
+              onChangeText={handleChange("email")}
               placeholder="Email"
               textContentType="emailAddress"
             />
