@@ -45,7 +45,7 @@ function LoginScreen() {
               textContentType="password"
               secureTextEntry
             />
-            <ErrorMessage error={errors.password} />
+            <ErrorMessage error={errors.password} visible={touched.password}/>
             <AppButton title="Login" onPress={handleSubmit} visible={touched.password}/>
           </>
         )}
