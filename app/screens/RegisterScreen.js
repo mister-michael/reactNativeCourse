@@ -1,14 +1,15 @@
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import { Formik } from "formik";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import {AppFormField, SubmitButton, AppForm} from "../components/forms"
 
-function LoginScreen() {
+function RegisterScreen() {
   const validationSchema = Yup.object().shape({
-    email: Yup.string().required().email().label("Email"),
+      
+      name: Yup.string().required().min(4).label("name"),
+      email: Yup.string().required().email().label("Email"),
     password: Yup.string().required().min(4).label("Password"),
   });
 
@@ -16,10 +17,19 @@ function LoginScreen() {
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
       <AppForm
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
+        <AppFormField
+          autoCapitalize="none"
+          autoCorrect={false}
+          icon="name"
+          keyboardType="email-address"
+          name="name"
+          placeholder="Email"
+          textContentType="emailAddress"
+        />
         <AppFormField
           autoCapitalize="none"
           autoCorrect={false}
@@ -57,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default RegisterScreen;
