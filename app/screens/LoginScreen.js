@@ -22,29 +22,31 @@ function LoginScreen() {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit, errors }) => (
+        {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
           <>
             <AppTextInput
               autoCapitalize="none"
               autoCorrect={false}
               icon="email"
               keyboardType="email-address"
+              onBlur={()=> setFieldTouched("email")}
               onChangeText={handleChange("eamil")}
               placeholder="Email"
               textContentType="emailAddress"
             />
-            <ErrorMessage error={errors.email} />
+            <ErrorMessage error={errors.email} visible={touched.email}/>
             <AppTextInput
               autoCapitalize="none"
               autoCorrect={false}
               icon="lock"
+              onBlur={()=> setFieldTouched("password")}
               onChangeText={handleChange("password")}
               placeholder="password"
               textContentType="password"
               secureTextEntry
             />
             <ErrorMessage error={errors.password} />
-            <AppButton title="Login" onPress={handleSubmit} />
+            <AppButton title="Login" onPress={handleSubmit} visible={touched.password}/>
           </>
         )}
       </Formik>
