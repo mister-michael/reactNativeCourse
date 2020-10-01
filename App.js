@@ -10,6 +10,7 @@ import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
   
@@ -22,6 +23,6 @@ export default function App() {
   const [category, setCategory] = useState(categories[1]);
 
   return (
-    <LoginScreen />
+    <MessagesScreen />
   );
 }
