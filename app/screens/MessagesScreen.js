@@ -9,8 +9,8 @@ import ListItemDeleteAction from "../components/ListItemDeleteAction";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "mod ules/r eact-nat ive/Libr aries/ Batched Bridge/Messag eQueue.js:1 11:4 in callFuncti onRetu rnFlush e modu les/rea ct-nativ e/Librarie rid ge/Messa geQueue.js:111:4 in call tionRe turnFlushe module tive/Li b rari es/BatchedBr idge/Me ssage Queue.js:111:4 in cal lFunctionR eturnFlushe modules/re act-native /Libraries/BatchedB ridge/MessageQueue.js:111:4 in callFunctionReturnFlushe",
+    description: "mod ules/r eact-nat ive/Libr aries/ Batched Bridge/Messag eQueue.js:1 11:4 in callFuncti onRetu rnFlush e modu les/rea ct-nativ e/Librarie rid ge/Messa geQueue.js:111:4 in call tionRe turnFlushe module tive/Li b rari es/BatchedBr idge/Me ssage Queue.js:111:4 in cal lFunctionR eturnFlushe modules/re act-native /Libraries/BatchedB ridge/MessageQueue.js:111:4 in callFunctionReturnFlushe",
     image: require("../assets/mosh.jpg"),
   },
   {
