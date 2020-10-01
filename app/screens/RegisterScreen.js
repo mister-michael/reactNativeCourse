@@ -1,36 +1,35 @@
 import React from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
-import {AppFormField, SubmitButton, AppForm} from "../components/forms"
+import {
+  AppForm as Form,
+  AppFormField as FormField,
+  SubmitButton,
+} from "../components/forms";
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required().label("Name"),
+  email: Yup.string().required().email().label("Email"),
+  password: Yup.string().required().min(4).label("Password"),
+});
 
 function RegisterScreen() {
-  const validationSchema = Yup.object().shape({
-      
-      name: Yup.string().required().min(4).label("name"),
-      email: Yup.string().required().email().label("Email"),
-    password: Yup.string().required().min(4).label("Password"),
-  });
-
   return (
     <Screen style={styles.container}>
-      <Image style={styles.logo} source={require("../assets/logo-red.png")} />
-      <AppForm
+      <Form
         initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        <AppFormField
-          autoCapitalize="none"
+        <FormField
           autoCorrect={false}
-          icon="name"
-          keyboardType="email-address"
+          icon="account"
           name="name"
-          placeholder="Email"
-          textContentType="emailAddress"
+          placeholder="Name"
         />
-        <AppFormField
+        <FormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="email"
@@ -39,17 +38,17 @@ function RegisterScreen() {
           placeholder="Email"
           textContentType="emailAddress"
         />
-        <AppFormField
+        <FormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="lock"
           name="password"
-          placeholder="password"
-          textContentType="password"
+          placeholder="Password"
           secureTextEntry
+          textContentType="password"
         />
-        <SubmitButton title="Login" />
-      </AppForm>
+        <SubmitButton title="Register" />
+      </Form>
     </Screen>
   );
 }
@@ -57,13 +56,6 @@ function RegisterScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-  },
-  logo: {
-    width: 80,
-    height: 80,
-    alignSelf: "center",
-    marginTop: 50,
-    marginBottom: 20,
   },
 });
 

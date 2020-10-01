@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, StyleSheet, TouchableOpacity } from "react-native";
-import colors from "../../config/colors";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
+
+import colors from "../config/colors";
 
 function AppButton({ title, onPress, color = "primary" }) {
   return (
@@ -15,14 +16,13 @@ function AppButton({ title, onPress, color = "primary" }) {
 
 const styles = StyleSheet.create({
   button: {
-    width: "100%",
-    height: 50,
     backgroundColor: colors.primary,
     borderRadius: 25,
     justifyContent: "center",
     alignItems: "center",
     padding: 15,
-    marginVertical: 10
+    width: "100%",
+    marginVertical: 10,
   },
   text: {
     color: colors.white,

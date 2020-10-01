@@ -1,12 +1,11 @@
 import React from "react";
-import { Text, ImageBackground, StyleSheet, View, Image } from "react-native";
-import AppButton from "../components/button/AppButton";
-import colors from "../config/colors.js";
+import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
+import AppButton from "../components/AppButton";
 
 function WelcomeScreen(props) {
   return (
     <ImageBackground
-    blurRadius={10}
+      blurRadius={10}
       style={styles.background}
       source={require("../assets/background.jpg")}
     >
@@ -14,16 +13,9 @@ function WelcomeScreen(props) {
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.buttonContainer}>
-        <AppButton
-          onPress={() => console.log("TAPPED")}
-          title="login"
-        ></AppButton>
-        <AppButton
-          onPress={() => console.log("TAPPED")}
-          title="register"
-          color="secondary"
-        ></AppButton>
+      <View style={styles.buttonsContainer}>
+        <AppButton title="Login" />
+        <AppButton title="Register" color="secondary" />
       </View>
     </ImageBackground>
   );
@@ -32,9 +24,12 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    flexDirection: "column",
     justifyContent: "flex-end",
     alignItems: "center",
+  },
+  buttonsContainer: {
+    padding: 20,
+    width: "100%",
   },
   logo: {
     width: 100,
@@ -45,15 +40,11 @@ const styles = StyleSheet.create({
     top: 70,
     alignItems: "center",
   },
-  buttonContainer: {
-    width: "100%",
-    padding: 20,
-  },
   tagline: {
     fontSize: 25,
     fontWeight: "600",
     paddingVertical: 20,
-  }
+  },
 });
 
 export default WelcomeScreen;
