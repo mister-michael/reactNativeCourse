@@ -9,15 +9,15 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import AppText from "./AppText";
-import Screen from "./Screen";
+import Text from "./Text";
 import defaultStyles from "../config/styles";
 import PickerItem from "./PickerItem";
+import Screen from "./Screen";
 
 function AppPicker({
   icon,
   items,
-  numberOfColumns,
+  numberOfColumns = 1,
   onSelectItem,
   PickerItemComponent = PickerItem,
   placeholder,
@@ -39,9 +39,9 @@ function AppPicker({
             />
           )}
           {selectedItem ? (
-            <AppText style={styles.text}>{selectedItem.label}</AppText>
+            <Text style={styles.text}>{selectedItem.label}</Text>
           ) : (
-            <AppText style={styles.placeholder}>{placeholder}</AppText>
+            <Text style={styles.placeholder}>{placeholder}</Text>
           )}
 
           <MaterialCommunityIcons
@@ -56,8 +56,8 @@ function AppPicker({
           <Button title="Close" onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
-            numColumns={numberOfColumns}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => (
               <PickerItemComponent
                 item={item}
