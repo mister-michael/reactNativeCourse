@@ -10,19 +10,24 @@ const Link = () => {
   return (
     <Button 
     title="click"
-    onPress={()=> navigation.navigate("TweetDetails")}/>
+    //optional second parameter, object with key value pairs
+    //we can access this object in the target Screen using route.params.'key'
+    onPress={()=> navigation.navigate("TweetDetails", {id: 1})}/>
   )
 }
 
 const Tweets = ({navigation}) => (
   <Screen>
-    <Text>Tweets</Text>
+    <Text>Tweets </Text>
     <Link />
   </Screen>
 );
-const TweetDetails = () => (
+const TweetDetails = ({route}) => (
+  //route is not available to child component
+  //in that case we would useRoute() to get access to the route method
+  //  like we did with useNavigation() above
   <Screen>
-    <Text>Tweet Details</Text>
+    <Text>Tweet Details {route.params.id}</Text>
   </Screen>
 );
 
