@@ -33,11 +33,30 @@ const TweetDetails = ({route}) => (
 
 const Stack = createStackNavigator();
 const StackNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Tweets" component={Tweets}/>
+  <Stack.Navigator
+  //screenOptions is defining the header style for child .Screens that don't have their own options prop defined
+    screenOptions={{
+      headerStyle: {backgroundColor: "dodgerblue"},
+      headerTintColor: "white",
+  }}
+  >
+    <Stack.Screen 
+    name="Tweets" 
+    component={Tweets}
+    options={{
+      //headerStyle takes a style object
+      headerStyle: {backgroundColor: "tomato"},
+      headerTintColor: "white",
+      headerShown: false,
+      //find more options props in documentation
+      //reactnavigation.org Navigators/createStacknavigator/options
+    }}
+    />
     <Stack.Screen 
     name="TweetDetails" 
     component={TweetDetails}
+    //options can equal or title, or pass a function which returns an object with a title key
+    //because you want to return an object, wrap the object in parentheses
     options={({route}) => ({title: route.params.id})}/>
   </Stack.Navigator>
 )
