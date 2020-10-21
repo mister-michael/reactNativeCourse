@@ -6,6 +6,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import Screen from "./app/components/Screen";
 
 const Link = () => {
+  //because there is no createStackNavigation().Screen here, we call useNavigation to access the navigation method
   const navigation = useNavigation();
   return (
     <Button 
@@ -13,6 +14,7 @@ const Link = () => {
     onPress={()=> navigation.navigate("TweetDetails")}/>
   )
 }
+//navigation prop can only be accessed inside a .Screen, a method created by the createStackNavigator() function
 
 const Tweets = ({navigation}) => (
   <Screen>
@@ -25,6 +27,7 @@ const TweetDetails = () => (
     <Text>Tweet Details</Text>
   </Screen>
 );
+//because the Tweets component is passed to the .Screen it can access the navigation prop
 
 const Stack = createStackNavigator();
 const StackNavigator = () => (
