@@ -35,7 +35,7 @@ const TweetDetails = ({ route }) => (
 );
 
 const Stack = createStackNavigator();
-const StackNavigator = () => (
+const FeedNavigator = () => (
   <Stack.Navigator
     //screenOptions is defining the header style for child .Screens that don't have their own options prop defined
     screenOptions={{
@@ -65,7 +65,7 @@ const StackNavigator = () => (
   </Stack.Navigator>
 );
 
-const Account = () => (
+const AccountNavigator = () => (
   <Screen>
     <Text>Account</Text>
   </Screen>
@@ -79,15 +79,8 @@ const TabNavigator = () => (
     inactiveBackgroundColor: '#eee',
     inactiveTintColor: 'black'
   }}>
-    <Tab.Screen 
-      options={{
-        //size prop uses size which native suggests
-        tabBarIcon: ({size, color}) => (
-        <MaterialCommunityIcons name="home" size={size} color={color}/>
-        )
-      }}
-      name="Feed" component={Tweets} />
-    <Tab.Screen name="Account" component={Account} />
+    <Tab.Screen name="Feed" component={FeedNavigator} />
+    <Tab.Screen name="Account" component={AccountNavigator} />
   </Tab.Navigator>
 );
 
