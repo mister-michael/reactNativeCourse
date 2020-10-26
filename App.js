@@ -8,10 +8,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Screen from "./app/components/Screen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
       <AuthNavigator />
     </NavigationContainer>
   );
