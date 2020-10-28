@@ -11,4 +11,4 @@ web-build/
 
 # macOS
 .DS_Store
-app/api/ipAddress.js
+./app/api/ipAddress.js
