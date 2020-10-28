@@ -1,40 +1,42 @@
 import React from "react";
-import { Text, ImageBackground, StyleSheet, View, Image } from "react-native";
-import AppButton from "../components/button/AppButton";
-import colors from "../config/colors.js";
+import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
-function WelcomeScreen(props) {
+import routes from "../navigation/routes";
+import Button from "../components/Button";
+
+function WelcomeScreen({ navigation }) {
   return (
-    <ImageBackground
-    blurRadius={10}
-      style={styles.background}
-      source={require("../assets/background.jpg")}
-    >
-      <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo-red.png")} />
-        <Text style={styles.tagline}>Sell What You Don't Need</Text>
-      </View>
-      <View style={styles.buttonContainer}>
-        <AppButton
-          onPress={() => console.log("TAPPED")}
-          title="login"
-        ></AppButton>
-        <AppButton
-          onPress={() => console.log("TAPPED")}
-          title="register"
-          color="secondary"
-        ></AppButton>
-      </View>
-    </ImageBackground>
+      <ImageBackground
+        blurRadius={10}
+        style={styles.background}
+        source={require("../assets/background.jpg")}
+      >
+        <View style={styles.logoContainer}>
+          <Image
+            style={styles.logo}
+            source={require("../assets/logo-red.png")}
+          />
+          <Text style={styles.tagline}>Sell What You Don't Need</Text>
+        </View>
+        <View style={styles.buttonsContainer}>
+          <Button title="Login" onPress={()=> navigation.navigate(routes.LOGIN)}/>
+          <Button title="Register" color="secondary" onPress={()=> navigation.navigate(routes.REGISTER)}/>
+        </View>
+      </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    flexDirection: "column",
     justifyContent: "flex-end",
     alignItems: "center",
+  },
+  buttonsContainer: {
+    padding: 20,
+    width: "100%",
   },
   logo: {
     width: 100,
@@ -45,15 +47,11 @@ const styles = StyleSheet.create({
     top: 70,
     alignItems: "center",
   },
-  buttonContainer: {
-    width: "100%",
-    padding: 20,
-  },
   tagline: {
     fontSize: 25,
     fontWeight: "600",
     paddingVertical: 20,
-  }
+  },
 });
 
 export default WelcomeScreen;
