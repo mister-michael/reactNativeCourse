@@ -17,7 +17,7 @@ function ListingsScreen({ navigation }) {
   );
 
   useEffect(() => {
-    loadListings(1, 2, 3);
+    loadListings();
   }, []);
 
   return (
