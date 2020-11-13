@@ -4,7 +4,7 @@ import client from './client';
 const endpoint = '/listings'
 const getListings = () => client.get(endpoint)
 
-const addListing = listing => {
+const addListing = (listing, onUploadProgress) => {
     //content-type, what type of data we're going to send in a request
     //default content-type is application json
     //multipart/form-data
@@ -24,7 +24,11 @@ const addListing = listing => {
     if (listing.location)
     data.append('location', JSON.stringify(listing.location))
 
-    client.post(endpoint, data)
+    
+
+    return client.post(endpoint, data, {
+        onUploadProgress: onUploadProgress(progress.loaded / progress.total)
+    })
 }
 
 export default {
